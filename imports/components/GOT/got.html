@@ -1,0 +1,23 @@
+<header>
+    <h1>Todo List ( {{$ctrl.incompleteCount}} )</h1>
+   <!-- <label class="hide-completed">
+     <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
+     Hide Completed Tasks
+   </label> -->
+    <login-buttons></login-buttons>
+     <form class="new-task" ng-submit="$ctrl.addCounter($ctrl.newCounter)" ng-show="$ctrl.currentUser">
+     <input ng-model="$ctrl.newCounter" type="text" name="text" placeholder="Type to add new counter"/>
+   </form>
+ </header>
+  
+ <ul>
+   <li ng-repeat="counter in $ctrl.counters" >
+     <!-- <button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button> -->
+  
+     <!-- <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/> -->
+  
+     <span class="text">
+        <strong>{{counter.username}}</strong> - {{counter.number}}
+     </span>
+   </li>
+ </ul>
